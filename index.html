@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Tuition Fee Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="University Logo" class="logo"/>
+    <h1>Tuition Fees Calculator For Under Graduate Program</h1>
+  </header>
+
+  <section>
+    <h2>Enter Your Details</h2>
+    <form id="feeForm">
+
+      <!-- SSC & HSC -->
+      <label for="sscGpa">SSC GPA:</label>
+      <input type="number" id="sscGpa" name="sscGpa" step="0.01" min="0" max="5" required>
+
+      <label for="hscGpa">HSC GPA:</label>
+      <input type="number" id="hscGpa" name="hscGpa" step="0.01" min="0" max="5" required>
+
+      <!-- Golden options -->
+      <div id="goldenContainer" class="hidden">
+        <label><span>Golden SSC (5.00)</span><input type="checkbox" id="goldenSsc" /></label>
+        <label><span>Golden HSC (5.00)</span><input type="checkbox" id="goldenHsc" /></label>
+      </div>
+    
+    
+
+      <!-- Gender -->
+      <label>Gender:</label>
+      <div class="option-group">
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+      </div>
+
+
+
+      <!-- Department -->
+      <label for="department">Select Department:</label>
+      <select id="department" required>
+        <option value="cse">Computer Science & Engineering (CSE)</option>
+        <option value="architecture">Architecture</option>
+        <option value="bba">Business Studies (BBA)</option>
+        <option value="english">English Studies (BA in English)</option>
+        <option value="fens">Food Engineering & Nutrition Science (FENS)</option>
+        <option value="jcms">Journalism, Communication & Media Studies (JCMS)</option>
+        <option value="law">LAW</option>
+        <option value="pharmacy">Pharmacy</option>
+      </select>
+
+      <button type="submit">Calculate Fee</button>
+    </form>
+  </section>
+
+  <section id="result" class="hidden">
+    <h2>🎓 Your Fee Breakdown</h2>
+    <div class="result-card"></div>
+  </section>
+
+  <footer>&copy; 2025 Developed By Md. Naimur Rahman Jisan | Department Of CSE | State University Of Bangladesh | All Rights Reserved </footer>
+  <script src="script.js"></script>
+</body>
+</html>
