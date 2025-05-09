@@ -27,6 +27,7 @@ const config = {
   architecture: {
     baseTuition: 598500,
     semesters: 10,
+    durationYears: 5,
     regPerSem: 15000,
     devPerSem: 6000,
     labPerSem: 0
@@ -34,6 +35,7 @@ const config = {
   bba: {
     baseTuition: 338000,
     semesters: 12,
+    durationYears: 4,
     regPerSem: 10000,
     devPerSem: 4000,
     labPerSem: 0
@@ -41,6 +43,7 @@ const config = {
   cse: {
     baseTuition: 416500,
     semesters: 12,
+    durationYears: 4,
     regPerSem: 10000,
     devPerSem: 4000,
     labPerSem: 3500
@@ -48,6 +51,7 @@ const config = {
   english: {
     baseTuition: 303875,
     semesters: 12,
+    durationYears: 4,
     regPerSem: 10000,
     devPerSem: 4000,
     labPerSem: 0
@@ -55,6 +59,7 @@ const config = {
   fens: {
     baseTuition: 338938,
     semesters: 12,
+    durationYears: 4,
     regPerSem: 10000,
     devPerSem: 4000,
     labPerSem: 3500
@@ -62,6 +67,7 @@ const config = {
   jcms: {
     baseTuition: 262500,
     semesters: 12,
+    durationYears: 4,
     regPerSem: 10000,
     devPerSem: 4000,
     labPerSem: 3500
@@ -69,6 +75,7 @@ const config = {
   law: {
     baseTuition: 462000,
     semesters: 8,
+    durationYears: 4,
     regPerSem: 15000,
     devPerSem: 6000,
     labPerSem: 0
@@ -76,6 +83,7 @@ const config = {
   pharmacy: {
     baseTuition: 585480,
     semesters: 8,
+    durationYears: 4,
     regPerSem: 15000,
     devPerSem: 6000,
     labPerSem: 7000
@@ -125,6 +133,8 @@ form.addEventListener("submit", e => {
     }
   
     const cfg = config[dept];
+    const years = cfg.durationYears;
+
     // waiver and fees
     const w = getWaiverPct(ssc, hsc, isGoldenS, isGoldenH, dept);
     let tuitionAfterWaiver = cfg.baseTuition * (1 - w);
@@ -156,7 +166,7 @@ form.addEventListener("submit", e => {
     resultCard.innerHTML = `
       <div class="department-info">
         <h3 class="department-heading">Department: ${dept.toUpperCase()}</h3>
-        <p><strong>Base Tuition (4 yr):</strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
+        <p><strong>Base Tuition (${years} yr):</strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
         <p><strong>Waiver Applied:</strong> ${(w * 100).toFixed(0)}%${gender === "female" ? " +10% female" : ""}</p>
       </div>
       <hr>
@@ -172,16 +182,16 @@ form.addEventListener("submit", e => {
         <p><strong>Total Cost for One Semester:</strong> ${totalSemesterCost.toLocaleString()} BDT</p>
       </div>
       <hr>
-      <h3>Total Tuition Fee Breakdown (For 4 Years):</h3>
+      <h3>Total Tuition Fee Breakdown (For ${years} Years):</h3>
       <div class="total-costs">
         <p><strong>Admission Fee:</strong> ${admission.toLocaleString()} BDT</p>
         <p><strong>Ethics Fee:</strong> ${ethics.toLocaleString()} BDT</p>
-        <p><strong>Registration Fee (4 years):</strong> ${totalRegCost.toLocaleString()} BDT</p>
-        <p><strong>Lab Fee (4 years):</strong> ${totalLabCost.toLocaleString()} BDT</p>
-        <p><strong>Development Fee (4 years):</strong> ${totalDevCost.toLocaleString()} BDT</p>
-        <p><strong>Base Tuition (4 years):</strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
+        <p><strong>Registration Fee (${years} years):</strong> ${totalRegCost.toLocaleString()} BDT</p>
+        <p><strong>Lab Fee (${years} years):</strong> ${totalLabCost.toLocaleString()} BDT</p>
+        <p><strong>Development Fee (${years} years):</strong> ${totalDevCost.toLocaleString()} BDT</p>
+        <p><strong>Base Tuition (${years} years):</strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
         <hr>
-        <p><strong>Total Cost After Waiver (4 years):<h1 style="color:green;"></strong> ${totalCostAfterWaiver.toLocaleString()} BDT</h1></p>
+        <p><strong>Total Cost After Waiver (${years} years):<h1 style="color:green;"></strong> ${totalCostAfterWaiver.toLocaleString()} BDT</h1></p>
       </div>
     `;
     resultSection.classList.remove("hidden");
