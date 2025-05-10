@@ -152,7 +152,7 @@ form.addEventListener("submit", e => {
     const ethics = 2000;
   
     // Total cost for one semester
-    const totalSemesterCost = tuitionPerSem + regPerSem + devPerSem + labPerSem + admission + ethics;
+    const totalSemesterCost = tuitionPerSem + regPerSem + devPerSem + labPerSem;
   
     // Total cost for the 4 years
     const totalTuitionCost = tuitionAfterWaiver;
@@ -176,8 +176,7 @@ form.addEventListener("submit", e => {
         <p><strong>Registration Fee:</strong> ${regPerSem.toLocaleString()} BDT</p>
         <p><strong>Development Fee:</strong> ${devPerSem.toLocaleString()} BDT</p>
         <p><strong>Lab Fee:</strong> ${labPerSem > 0 ? labPerSem.toLocaleString() : '0 BDT'}</p>
-        <p><strong>Admission Fee:</strong> ${admission.toLocaleString()} BDT</p>
-        <p><strong>Ethics Fee:</strong> ${ethics.toLocaleString()} BDT</p>
+        
         <hr>
         <p><strong>Total Cost for One Semester:</strong> ${totalSemesterCost.toLocaleString()} BDT</p>
       </div>
