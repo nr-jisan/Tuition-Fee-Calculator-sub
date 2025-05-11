@@ -105,7 +105,7 @@ function getWaiverPct(ssc, hsc, isGoldenSsc, isGoldenHsc, dept) {
   } else {
     // GENERAL WAIVER LOGIC
     if (isGoldenSsc && isGoldenHsc) return 0.75;
-    if ((isGoldenHsc && hsc === 5) || (isGoldenSsc && ssc === 5)) return 0.65;
+    if ((isGoldenHsc && hsc === 5)) return 0.65;
     if (ssc === 5 && hsc === 5) return 0.60;
     if (hsc === 5) return 0.50;
     if (hsc >= 4.80) return 0.35;
@@ -124,7 +124,11 @@ form.addEventListener("submit", e => {
     const gender = form.gender.value;
     const isGoldenS = goldenSsc.checked;
     const isGoldenH = goldenHsc.checked;
-  
+
+    if (isNaN(ssc) || isNaN(hsc)) {
+      alert("Please enter both SSC and HSC GPA.");
+      return;
+    }
     // eligibility
     if ((ssc < 2.5 || hsc < 2.5) && (ssc + hsc < 6.0)) {
       resultCard.innerHTML = `<strong>Ineligible.</strong><br> Min GPA 2.50 or combined ≥ 6.00 required.`;
