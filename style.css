@@ -133,7 +133,25 @@ form label {
     margin-right: 8px; /* Space between the text and the checkbox */
     white-space: nowrap; /* Prevent text from wrapping */
   }
-  
+#olevelContainer select,
+#olevelContainer h3 {
+  font-size: 0.95rem;
+}
+.olevel-grade,
+.alevel-grade {
+  appearance: none;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 6px 30px 6px 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+
   .department-info {
     background-color: #f0f8ff;
     padding: 20px;
@@ -225,6 +243,7 @@ form label {
 .hidden {
   display: none;
 }
+
 
 /* Footer */
 footer {

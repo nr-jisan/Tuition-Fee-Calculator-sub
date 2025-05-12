@@ -9,27 +9,71 @@
 <body>
   <header>
     <img src="assets/logo.png" alt="University Logo" class="logo"/>
-    <h1>Tuition Fees Calculator For Under Graduate Program</h1>
+    <h1>Tuition Fees Calculator For Undergraduate Program</h1>
   </header>
 
   <section>
     <h2>Enter Your Details</h2>
     <form id="feeForm">
+      <!-- Admission Type -->
+      <label for="admissionType">Select Admission Type:</label>
+      <select id="admissionType" required>
+        <option value="national">Undergraduate (National Curriculum)</option>
+        <option value="diploma">Undergraduate (Diploma Holder)</option>
+        <option value="olevel">Undergraduate (A/O Level)</option>
+      </select>
 
-      <!-- SSC & HSC -->
-      <label for="sscGpa">SSC GPA:</label>
-      <input type="number" id="sscGpa" name="sscGpa" step="0.01" min="0" max="5" required>
+      <!-- National Curriculum GPA -->
+      <label for="sscGpa" class="gpa-group">SSC GPA:</label>
+      <input type="number" id="sscGpa" name="sscGpa" step="0.01" min="0" max="5" class="gpa-group">
 
-      <label for="hscGpa">HSC GPA:</label>
-      <input type="number" id="hscGpa" name="hscGpa" step="0.01" min="0" max="5" required>
+      <label for="hscGpa" class="gpa-group">HSC GPA:</label>
+      <input type="number" id="hscGpa" name="hscGpa" step="0.01" min="0" max="5" class="gpa-group">
 
-      <!-- Golden options -->
+      <!-- Golden Checkboxes -->
       <div id="goldenContainer" class="hidden">
         <label><span>Golden SSC (5.00)</span><input type="checkbox" id="goldenSsc" /></label>
         <label><span>Golden HSC (5.00)</span><input type="checkbox" id="goldenHsc" /></label>
       </div>
-    
-    
+
+      <!-- Diploma CGPA -->
+      <div id="diplomaContainer" class="hidden">
+        <label for="diplomaCgpa">Diploma CGPA (Out of 4.00):</label>
+        <input type="number" id="diplomaCgpa" name="diplomaCgpa" step="0.01" min="0" max="4">
+      </div>
+
+      <!-- A/O Level Grades -->
+      <div id="olevelContainer" class="hidden">
+        <h3>O Level Grades:</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+          <select class="olevel-grade" required style="flex: 1; min-width: 50px;">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+          <select class="olevel-grade" required style="flex: 1; min-width: 50px;">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+          <select class="olevel-grade" required style="flex: 1; min-width: 50px;">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+          <select class="olevel-grade" required style="flex: 1; min-width: 50px;">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+          <select class="olevel-grade" required style="flex: 1; min-width: 50px;">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+        </div>
+
+        <h3>A Level Grades:</h3>
+        <div style="display: flex; gap: 8px;">
+          <select class="alevel-grade" required style="flex: 1; min-width: 50px;">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+          <select class="alevel-grade" required style="flex: 1; min-width: 50px;">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+        </div>
+      </div>
+
 
       <!-- Gender -->
       <label>Gender:</label>
@@ -41,20 +85,9 @@
         <label for="female">Female</label>
       </div>
 
-
-
       <!-- Department -->
       <label for="department">Select Department:</label>
-      <select id="department" required>
-        <option value="cse">Computer Science & Engineering (CSE)</option>
-        <option value="architecture">Architecture</option>
-        <option value="bba">Business Studies (BBA)</option>
-        <option value="english">English Studies (BA in English)</option>
-        <option value="fens">Food Engineering & Nutrition Science (FENS)</option>
-        <option value="jcms">Journalism, Communication & Media Studies (JCMS)</option>
-        <option value="law">LAW</option>
-        <option value="pharmacy">Pharmacy</option>
-      </select>
+      <select id="department" required></select>
 
       <button type="submit">Calculate Fee</button>
     </form>
@@ -65,7 +98,7 @@
     <div class="result-card"></div>
   </section>
 
-  <footer>&copy; 2025 Developed By Md. Naimur Rahman Jisan | Department Of CSE | State University Of Bangladesh | All Rights Reserved </footer>
+  <footer>&copy; 2025 Developed By Md. Naimur Rahman Jisan | Department Of CSE | State University Of Bangladesh | All Rights Reserved</footer>
   <script src="script.js"></script>
 </body>
 </html>
