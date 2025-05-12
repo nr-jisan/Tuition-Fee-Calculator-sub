@@ -141,9 +141,11 @@ form.addEventListener("submit", e => {
 
     // waiver and fees
     const w = getWaiverPct(ssc, hsc, isGoldenS, isGoldenH, dept);
-    let tuitionAfterWaiver = cfg.baseTuition * (1 - w);
-    // 10% extra waiver for female
-    if (gender === "female") tuitionAfterWaiver *= 0.90;
+    let totalWaiver = w;
+    if (gender === "female") totalWaiver += 0.10;
+    if (totalWaiver > 1) totalWaiver = 1;
+    let tuitionAfterWaiver = cfg.baseTuition * (1 - totalWaiver);
+
   
     // Semester fees for one semester
     const tuitionPerSem = tuitionAfterWaiver / cfg.semesters;
