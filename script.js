@@ -371,14 +371,14 @@ form.addEventListener("submit", e => {
 
   resultCard.innerHTML = `
   <div class="department-info">
-    <h3 class="department-heading">Department Of ${dept.toUpperCase()}</h3>
+    <h3 class="department-heading">Department of ${dept.toUpperCase()}</h3>
     <p><strong>Total Credit:</strong> ${cfg.totalCredit}</p>
     <p><strong>Per Credit Fee:</strong> ${cfg.costPerCredit.toLocaleString()} BDT</p>
     <p><strong>Total Semester:</strong> ${cfg.semesters}</p>
     <p><strong>Flat Waiver:</strong> ${(cfg.flatWeiver * 100).toFixed(0)}%</p>
     <br>
     <p><strong>Base Tuition After Flat Waiver (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
-    <p><strong>Waiver Applied:</strong> ${(w * 100).toFixed(0)}%${gender === "female" ? " +10% female" : ""}</p>
+    <p><strong>Total Waiver:</strong> ${(w * 100).toFixed(0)}%${gender === "female" ? " +10% female" : ""}</p>
   </div>
   <hr>
   <h3>Semester Breakdown <br> (Avarage Cost Each Semester):</h3>
