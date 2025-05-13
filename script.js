@@ -111,7 +111,7 @@ const nationalDepartments = {
     
     totalCredit: 164,
     costPerCredit: 4200,
-    flatWeiver: 0,
+    flatWeiver: 0.15,
 
     semesters: 8,
     durationYears: 4,
