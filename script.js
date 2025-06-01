@@ -385,7 +385,7 @@ form.addEventListener("submit", e => {
     <br>
     <p><strong>Flat Waiver:</strong> ${(cfg.flatWeiver * 100).toFixed(0)}%</p>
     <p><strong>Base Tuition After Flat Waiver (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
-    <p><strong>Waiver Applied: </strong> ${(w * 100).toFixed(0)}% on result${gender === "female" ? " +10% female" : ""}</p>
+    <p><strong>Waiver Applied: <br></strong> ${(w * 100).toFixed(0)}% on Result${gender === "female" ? " +10% Female" : ""}</p>
   </div>
   <hr>
   <h3>Semester Breakdown <br> (Avarage Cost Each Semester):</h3>
