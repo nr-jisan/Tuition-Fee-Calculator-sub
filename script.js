@@ -375,7 +375,7 @@ form.addEventListener("submit", e => {
     <p><strong>Total Credit:</strong> ${cfg.totalCredit}</p>
     <p><strong>Per Credit Fee:</strong> ${cfg.costPerCredit.toLocaleString()} BDT</p>
     <p><strong>Total Semester:</strong> ${cfg.semesters}</p>
-      <p><strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br><h3>${(
+      <p><strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br><h3 style="color:#4682B4;">${(
         cfg.totalCredit * cfg.costPerCredit + 
         cfg.regPerSem * cfg.semesters + 
         cfg.devPerSem * cfg.semesters + 
@@ -385,7 +385,7 @@ form.addEventListener("submit", e => {
     <br>
     <p><strong>Flat Waiver:</strong> ${(cfg.flatWeiver * 100).toFixed(0)}%</p>
     <p><strong>Base Tuition After Flat Waiver (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
-    <p><strong>Total Waiver:</strong> ${(w * 100).toFixed(0)}%${gender === "female" ? " +10% female" : ""}</p>
+    <p><strong>Waiver Applied: </strong> ${(w * 100).toFixed(0)}% Result${gender === "female" ? " +10% Female" : ""}</p>
   </div>
   <hr>
   <h3>Semester Breakdown <br> (Avarage Cost Each Semester):</h3>
