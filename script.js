@@ -385,7 +385,7 @@ form.addEventListener("submit", e => {
   <div class="semester-fees">
     <p><strong>Tuition Fees (Avg):<br></strong> ${tuitionPerSem.toLocaleString()} BDT</p>
     <p><strong>Registration Fee:<br></strong> ${cfg.regPerSem.toLocaleString()} BDT</p>
-    <p><strong>Development Fees:<br></strong> ${cfg.devPerSem.toLocaleString()} BDT</p>
+    <p><strong>Transport Fees:<br></strong> ${cfg.devPerSem.toLocaleString()} BDT</p>
     <p><strong>Lab Fee:<br></strong> ${cfg.labPerSem.toLocaleString()} BDT</p>
     <hr>
     <h3 style="color:DarkSlateGray;"><strong>Total (Avg):</strong> ${totalSemesterCost.toLocaleString()} BDT</h3>
@@ -396,7 +396,7 @@ form.addEventListener("submit", e => {
     <p><strong>Admission Fee:</strong> 25,000 BDT</p>
     <p><strong>Ethics Fee:</strong> 2,000 BDT</p>
     <p><strong>Registration Fees (${cfg.durationYears} year):<br></strong> ${(cfg.regPerSem * cfg.semesters).toLocaleString()} BDT</p>
-    <p><strong>Development Fees (${cfg.durationYears} year):<br></strong> ${(cfg.devPerSem * cfg.semesters).toLocaleString()} BDT</p>
+    <p><strong>Transport Fees (${cfg.durationYears} year):<br></strong> ${(cfg.devPerSem * cfg.semesters).toLocaleString()} BDT</p>
     <p><strong>Lab Fees(${cfg.durationYears} year):</strong><br> ${(cfg.labPerSem * cfg.semesters).toLocaleString()} BDT</p>
     <p><strong>Tuition Fees After Total Waiver (${cfg.durationYears} year):</strong><br> ${Math.round(tuitionAfterWaiver).toLocaleString()} BDT</p>
     <hr>
