@@ -376,13 +376,6 @@ form.addEventListener("submit", e => {
     <p><strong>Per Credit Fee:</strong> ${cfg.costPerCredit.toLocaleString()} BDT</p>
     <p><strong>Total Semester:</strong> ${cfg.semesters}</p>
     <hr>
-    <p><strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br><h1 style="color:Crimson;">${(
-      cfg.totalCredit * cfg.costPerCredit + 
-      cfg.regPerSem * cfg.semesters + 
-      cfg.devPerSem * cfg.semesters + 
-      cfg.labPerSem * cfg.semesters + 
-      25000 + 2000
-    ).toLocaleString()} BDT</h1></p>
     <p><strong>Flat Waiver:</strong> ${(cfg.flatWeiver * 100).toFixed(0)}%</p>
     <br>
     <p><strong>Base Tuition After Flat Waiver (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
@@ -409,6 +402,13 @@ form.addEventListener("submit", e => {
     <p><strong>Tuition Fees After Total Waiver (${cfg.durationYears} year):</strong><br> ${Math.round(tuitionAfterWaiver).toLocaleString()} BDT</p>
     <hr>
     <p><strong>Total Cost After Waiver (${cfg.durationYears} year):</strong><br><h1 style="color:green;">${totalCostAfterWaiver.toLocaleString()} BDT</h1></p>
+        <p><strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br><h1 style="color:Crimson;">${(
+      cfg.totalCredit * cfg.costPerCredit + 
+      cfg.regPerSem * cfg.semesters + 
+      cfg.devPerSem * cfg.semesters + 
+      cfg.labPerSem * cfg.semesters + 
+      25000 + 2000
+    ).toLocaleString()} BDT</h1></p>
   </div>
 `;
 
