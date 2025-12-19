@@ -349,6 +349,14 @@ form.addEventListener("submit", e => {
 
 
   const tuitionPerSem = Math.round(tuitionAfterWaiver / cfg.semesters);
+  const totalCostWithoutWaiver = Math.round(
+  cfg.baseTuition +
+  cfg.regPerSem * cfg.semesters +
+  cfg.devPerSem * cfg.semesters +
+  cfg.labPerSem * cfg.semesters +
+  25000 + // admission
+  2000    // ethics
+);
   const totalCostAfterWaiver = Math.round(
     tuitionAfterWaiver +
     cfg.regPerSem * cfg.semesters +
@@ -389,6 +397,12 @@ form.addEventListener("submit", e => {
     <p><strong>Lab Fees(${cfg.durationYears} year):</strong><br> ${(cfg.labPerSem * cfg.semesters).toLocaleString()} BDT</p>
     <p><strong>Tuition Fees After Total Waiver (${cfg.durationYears} year):</strong><br> ${Math.round(tuitionAfterWaiver).toLocaleString()} BDT</p>
     <hr>
+    <p>
+  <strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br>
+  <h1 style="color:#b22222;">
+    ${totalCostWithoutWaiver.toLocaleString()} BDT
+  </h1>
+</p>
     <p><strong>Total Cost After Waiver (${cfg.durationYears} year):</strong><br><h1 style="color:green;">${totalCostAfterWaiver.toLocaleString()} BDT</h1></p>
   </div>
 `;
