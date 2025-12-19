@@ -374,7 +374,11 @@ form.addEventListener("submit", e => {
     <p><strong>Per Credit Fee:</strong> ${cfg.costPerCredit.toLocaleString()} BDT</p>
     <p><strong>Total Semester:</strong> ${cfg.semesters}</p>
     <br>
-    <p><strong>Base Tuition (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
+      <strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br>
+  <h1>
+    ${totalCostWithoutWaiver.toLocaleString()} BDT
+  </h1>
+</p>
     <p><strong>Total Waiver:</strong> ${(w * 100).toFixed(0)}%${gender === "female" ? " +10% female" : ""}</p>
   </div>
   <hr>
@@ -398,11 +402,7 @@ form.addEventListener("submit", e => {
     <p><strong>Tuition Fees After Total Waiver (${cfg.durationYears} year):</strong><br> ${Math.round(tuitionAfterWaiver).toLocaleString()} BDT</p>
     <hr>
     <p>
-  <strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br>
-  <h1 style="color:#b22222;">
-    ${totalCostWithoutWaiver.toLocaleString()} BDT
-  </h1>
-</p>
+
     <p><strong>Total Cost After Waiver (${cfg.durationYears} year):</strong><br><h1 style="color:green;">${totalCostAfterWaiver.toLocaleString()} BDT</h1></p>
   </div>
 `;
