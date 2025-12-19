@@ -365,30 +365,16 @@ form.addEventListener("submit", e => {
     <p><strong>Total Credit:</strong> ${cfg.totalCredit}</p>
     <p><strong>Per Credit Fee:</strong> ${cfg.costPerCredit.toLocaleString()} BDT</p>
     <p><strong>Total Semester:</strong> ${cfg.semesters}</p>
-<<<<<<< HEAD
-      <p><strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br><h3 style="color:DarkSlateGray;">${(
-        cfg.totalCredit * cfg.costPerCredit + 
-        cfg.regPerSem * cfg.semesters + 
-        cfg.devPerSem * cfg.semesters + 
-        cfg.labPerSem * cfg.semesters + 
-        25000 + 2000
-    ).toLocaleString()} BDT</h3></p>
-    <br>
-    <p><strong>Flat Waiver:</strong> ${(cfg.flatWeiver * 100).toFixed(0)}%</p>
-    <p><strong>Base Tuition After Flat Waiver (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
-    <p><strong>Waiver Applied: <br></strong> ${(w * 100).toFixed(0)}% on Result${gender === "female" ? " +10% Female" : ""}</p>
-=======
     <br>
     <p><strong>Base Tuition (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
     <p><strong>Total Waiver:</strong> ${(w * 100).toFixed(0)}%${gender === "female" ? " +10% female" : ""}</p>
->>>>>>> bfd844f (new policy for 2026)
   </div>
   <hr>
   <h3>Semester Breakdown <br> (Avarage Cost Each Semester):</h3>
   <div class="semester-fees">
     <p><strong>Tuition Fees (Avg):<br></strong> ${tuitionPerSem.toLocaleString()} BDT</p>
     <p><strong>Registration Fee:<br></strong> ${cfg.regPerSem.toLocaleString()} BDT</p>
-    <p><strong>Transport Fees:<br></strong> ${cfg.devPerSem.toLocaleString()} BDT</p>
+    <p><strong>Development Fees:<br></strong> ${cfg.devPerSem.toLocaleString()} BDT</p>
     <p><strong>Lab Fee:<br></strong> ${cfg.labPerSem.toLocaleString()} BDT</p>
     <hr>
     <h3 style="color:DarkSlateGray;"><strong>Total (Avg):</strong> ${totalSemesterCost.toLocaleString()} BDT</h3>
@@ -399,7 +385,7 @@ form.addEventListener("submit", e => {
     <p><strong>Admission Fee:</strong> 25,000 BDT</p>
     <p><strong>Ethics Fee:</strong> 2,000 BDT</p>
     <p><strong>Registration Fees (${cfg.durationYears} year):<br></strong> ${(cfg.regPerSem * cfg.semesters).toLocaleString()} BDT</p>
-    <p><strong>Transport Fees (${cfg.durationYears} year):<br></strong> ${(cfg.devPerSem * cfg.semesters).toLocaleString()} BDT</p>
+    <p><strong>Development Fees (${cfg.durationYears} year):<br></strong> ${(cfg.devPerSem * cfg.semesters).toLocaleString()} BDT</p>
     <p><strong>Lab Fees(${cfg.durationYears} year):</strong><br> ${(cfg.labPerSem * cfg.semesters).toLocaleString()} BDT</p>
     <p><strong>Tuition Fees After Total Waiver (${cfg.durationYears} year):</strong><br> ${Math.round(tuitionAfterWaiver).toLocaleString()} BDT</p>
     <hr>
