@@ -26,8 +26,7 @@ const nationalDepartments = {
   architecture: {
 
     totalCredit: 190,
-    costPerCredit: 3500,
-    flatWeiver: 0.1,
+    costPerCredit: 2750,
 
     semesters: 10,
     durationYears: 5,
@@ -38,8 +37,8 @@ const nationalDepartments = {
   bba: {
     
     totalCredit: 130,
-    costPerCredit: 3250,
-    flatWeiver: 0.2,
+    costPerCredit: 2300,
+
     
     semesters: 12,
     durationYears: 4,
@@ -50,8 +49,7 @@ const nationalDepartments = {
   cse: {
     
     totalCredit: 140,
-    costPerCredit: 3500,
-    flatWeiver: 0.15,
+    costPerCredit: 2550,
 
     semesters: 12,
     durationYears: 4,
@@ -62,8 +60,7 @@ const nationalDepartments = {
   english: {
     
     totalCredit: 130,
-    costPerCredit: 2750,
-    flatWeiver: 0.15,
+    costPerCredit: 1800,
 
     semesters: 12,
     durationYears: 4,
@@ -74,8 +71,7 @@ const nationalDepartments = {
   fens: {
     
     totalCredit: 145,
-    costPerCredit: 2750,
-    flatWeiver: 0.15,
+    costPerCredit: 2350,
 
     semesters: 12,
     durationYears: 4,
@@ -86,8 +82,7 @@ const nationalDepartments = {
   jcms: {
     
     totalCredit: 140,
-    costPerCredit: 2500,
-    flatWeiver: 0.25,
+    costPerCredit: 1800,
 
     semesters: 12,
     durationYears: 4,
@@ -98,8 +93,7 @@ const nationalDepartments = {
   law: {
     
     totalCredit: 140,
-    costPerCredit: 3300,
-    flatWeiver: 0.1,
+    costPerCredit: 3000,
 
     semesters: 8,
     durationYears: 4,
@@ -111,7 +105,6 @@ const nationalDepartments = {
     
     totalCredit: 164,
     costPerCredit: 4200,
-    flatWeiver: 0.15,
 
     semesters: 8,
     durationYears: 4,
@@ -124,8 +117,7 @@ const diplomaDepartments = {
   architecture: {
 
     totalCredit: 190,
-    costPerCredit: 3500,
-    flatWeiver: 0.1,
+    costPerCredit: 2300,
 
     semesters: 10,
     durationYears: 5,
@@ -136,8 +128,7 @@ const diplomaDepartments = {
   cse: {
 
     totalCredit: 140,
-    costPerCredit: 3500,
-    flatWeiver: 0.15,
+    costPerCredit: 2000,
 
     semesters: 12,
     durationYears: 4,
@@ -148,8 +139,7 @@ const diplomaDepartments = {
   fens: {
 
     totalCredit: 125,
-    costPerCredit: 2750,
-    flatWeiver: 0.15,
+    costPerCredit: 2000,
 
     semesters: 11,
     durationYears: 3.5,
@@ -162,8 +152,8 @@ const diplomaDepartments = {
 // Tuition Initialization (unchanged)
 [ nationalDepartments, diplomaDepartments ].forEach(group => {
   Object.values(group).forEach(dept => {
-    if (dept.totalCredit && dept.costPerCredit && dept.flatWeiver !== undefined) {
-      dept.baseTuition = dept.totalCredit * dept.costPerCredit * (1 - dept.flatWeiver);
+    if (dept.totalCredit && dept.costPerCredit) {
+      dept.baseTuition = dept.totalCredit * dept.costPerCredit;
     }
   });
 });
@@ -375,6 +365,7 @@ form.addEventListener("submit", e => {
     <p><strong>Total Credit:</strong> ${cfg.totalCredit}</p>
     <p><strong>Per Credit Fee:</strong> ${cfg.costPerCredit.toLocaleString()} BDT</p>
     <p><strong>Total Semester:</strong> ${cfg.semesters}</p>
+<<<<<<< HEAD
       <p><strong>Total Cost Without Any Waiver (${cfg.durationYears} year):</strong><br><h3 style="color:DarkSlateGray;">${(
         cfg.totalCredit * cfg.costPerCredit + 
         cfg.regPerSem * cfg.semesters + 
@@ -386,6 +377,11 @@ form.addEventListener("submit", e => {
     <p><strong>Flat Waiver:</strong> ${(cfg.flatWeiver * 100).toFixed(0)}%</p>
     <p><strong>Base Tuition After Flat Waiver (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
     <p><strong>Waiver Applied: <br></strong> ${(w * 100).toFixed(0)}% on Result${gender === "female" ? " +10% Female" : ""}</p>
+=======
+    <br>
+    <p><strong>Base Tuition (${cfg.durationYears} year):<br></strong> ${cfg.baseTuition.toLocaleString()} BDT</p>
+    <p><strong>Total Waiver:</strong> ${(w * 100).toFixed(0)}%${gender === "female" ? " +10% female" : ""}</p>
+>>>>>>> bfd844f (new policy for 2026)
   </div>
   <hr>
   <h3>Semester Breakdown <br> (Avarage Cost Each Semester):</h3>
